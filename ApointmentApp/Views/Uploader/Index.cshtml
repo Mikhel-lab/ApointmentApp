@@ -1,0 +1,37 @@
+﻿@*
+	For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+
+@{ this.ViewBag.Title = "Let’s Upload Something!"; }
+	<!DOCTYPE html>
+	<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>@ViewData["Title"] - ApointmentApp</title>
+		<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="~/css/site.css" />
+	</head>
+	<body>
+		<h1>Let’s Upload Something!</h1>
+		<form id="form" name="form" action="/uploader" enctype="multipart/form-data" method="post">
+			<div class="buttons">
+				<div class="upload-button">
+					<div class="label">Click me!</div>
+					<input id="files" name="files" type="file" size="1" multiple onchange="uploadFiles('files');" />
+				</div>
+			</div>
+		</form>
+		<div id="progress" class="progress"><div id="bar" class="bar"></div><div id="label" class="label">0%</div></div>
+
+
+		<script src="~/lib/jquery/dist/jquery.min.js"></script>
+		<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+		<script src="~/js/site.js" asp-append-version="true"></script>
+	</body>
+	</html>
+
+
